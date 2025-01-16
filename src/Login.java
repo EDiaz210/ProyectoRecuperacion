@@ -63,7 +63,6 @@ public class Login {
                                 JFrame frame = new JFrame();
                                 frame.setTitle("Login");
                                 frame.setSize(350, 200);
-                                frame.setContentPane(new Opciones().menu);
                                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                 frame.setVisible(true);
 
