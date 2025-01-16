@@ -29,9 +29,10 @@ public class Login {
 
                         if(resultSet.next()) {
                             if (Seleccionador.getSelectedItem().equals(resultSet.getString("rol"))){
-                                System.out.println("Ingresaste a modo administrador ");
                                 if(textField1.getText().equals(resultSet.getString("username")) && new String(passwordField1.getPassword()).equals(resultSet.getString("password"))) {
-                                    if(resultSet.getString("rol").equals("Aministrador")){
+
+                                    if(resultSet.getString("rol").equals("Administrador")){
+                                        System.out.println("Ingresaste a modo administrador ");
                                         JFrame frame = new JFrame();
                                         frame.setTitle("Login");
                                         frame.setSize(350, 200);
@@ -42,6 +43,7 @@ public class Login {
                                         ((JFrame) SwingUtilities.getWindowAncestor(logInButton)).dispose();
 
                                     }else if(resultSet.getString("rol").equals("Usuario")){
+                                        System.out.println("Ingresaste a modo usuario ");
                                         JFrame frame = new JFrame();
                                         frame.setTitle("Login");
                                         frame.setSize(350, 200);
