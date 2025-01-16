@@ -16,7 +16,7 @@ public class Login {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Seleccionador.getSelectedItem().toString().equals("Administrador")){
-                    System.out.println("Ingresaste a mod administrador ");
+                    System.out.println("Ingresaste a modo administrador ");
 
                     String url = "jdbc:mysql://ul1p0vkekpygav1f:g4TMqDpYcFoAkQKd4tWx@bjaibh7r281ex1wojndt-mysql.services.clever-cloud.com:3306/bjaibh7r281ex1wojndt";
                     String usuario = "ul1p0vkekpygav1f";
@@ -29,7 +29,7 @@ public class Login {
 
 
                         if(resultSet.next()) {
-                            if(textField1.getText().equals(resultSet.getString("usuario")) && new String(passwordField1.getPassword()).equals(resultSet.getString("contraseña"))) {
+                            if(textField1.getText().equals(resultSet.getString("username")) && new String(passwordField1.getPassword()).equals(resultSet.getString("password"))) {
                                 JFrame frame = new JFrame();
                                 frame.setTitle("Login");
                                 frame.setSize(350, 200);
@@ -45,7 +45,12 @@ public class Login {
                     } catch (SQLException ex) {
                         ex.printStackTrace();
                     }
+
+
+
+
                 }else if (Seleccionador.getSelectedItem().toString().equals("Usuario")){
+                    System.out.println("Ingresaste a modo usuario");
 
                     String url = "jdbc:mysql://ul1p0vkekpygav1f:g4TMqDpYcFoAkQKd4tWx@bjaibh7r281ex1wojndt-mysql.services.clever-cloud.com:3306/bjaibh7r281ex1wojndt";
                     String usuario = "ul1p0vkekpygav1f";
@@ -58,7 +63,7 @@ public class Login {
 
 
                         if(resultSet.next()) {
-                            if(textField1.getText().equals(resultSet.getString("usuario")) && new String(passwordField1.getPassword()).equals(resultSet.getString("contraseña"))) {
+                            if(textField1.getText().equals(resultSet.getString("username")) && new String(passwordField1.getPassword()).equals(resultSet.getString("password"))) {
                                 JFrame frame = new JFrame();
                                 frame.setTitle("Login");
                                 frame.setSize(350, 200);
