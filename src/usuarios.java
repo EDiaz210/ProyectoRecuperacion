@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class usuarios {
     public JTabbedPane usuarios_pestañas;
-    private JPanel panel1;
+    public JPanel panel1;
     private JButton Salir1;
     private JButton Salir2;
     private JTextArea textArea1;

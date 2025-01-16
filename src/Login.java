@@ -31,14 +31,25 @@ public class Login {
                             if (Seleccionador.getSelectedItem().equals(resultSet.getString("rol"))){
                                 System.out.println("Ingresaste a modo administrador ");
                                 if(textField1.getText().equals(resultSet.getString("username")) && new String(passwordField1.getPassword()).equals(resultSet.getString("password"))) {
-                                    JFrame frame = new JFrame();
-                                    frame.setTitle("Login");
-                                    frame.setSize(350, 200);
-                                    frame.setContentPane(new MenuAdmin().menuAd);
-                                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                                    frame.setVisible(true);
+                                    if(resultSet.getString("rol").equals("Aministrador")){
+                                        JFrame frame = new JFrame();
+                                        frame.setTitle("Login");
+                                        frame.setSize(350, 200);
+                                        frame.setContentPane(new MenuAdmin().menuAd);
+                                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                        frame.setVisible(true);
 
-                                    ((JFrame) SwingUtilities.getWindowAncestor(logInButton)).dispose();
+                                        ((JFrame) SwingUtilities.getWindowAncestor(logInButton)).dispose();
+
+                                    }else if(resultSet.getString("rol").equals("Usuario")){
+                                        JFrame frame = new JFrame();
+                                        frame.setTitle("Login");
+                                        frame.setSize(350, 200);
+                                        frame.setContentPane(new usuarios().panel1);
+                                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                        frame.setVisible(true);
+                                    }
+
                                 }
                             }else {
                             resultado.setText("Digite correctamente las credenciales");
