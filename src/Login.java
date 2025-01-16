@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -25,7 +24,7 @@ public class Login {
 
                     try (Connection connection = DriverManager.getConnection(url, usuario, password)) {
                         Statement statement = connection.createStatement();
-                        String query = "SELECT * FROM usuarios WHERE usuario = '" + textField1.getText() + "' AND contraseña = '" + new String(passwordField1.getPassword()) + "'";
+                        String query = "SELECT * FROM usuarios WHERE username = '" + textField1.getText() + "' AND password = '" + new String(passwordField1.getPassword()) + "'";
                         ResultSet resultSet = statement.executeQuery(query);
 
 
@@ -54,7 +53,7 @@ public class Login {
 
                     try (Connection connection = DriverManager.getConnection(url, usuario, password)) {
                         Statement statement = connection.createStatement();
-                        String query = "SELECT * FROM usuarios WHERE usuario = '" + textField1.getText() + "' AND contraseña = '" + new String(passwordField1.getPassword()) + "'";
+                        String query = "SELECT * FROM usuarios WHERE username = '" + textField1.getText() + "' AND password = '" + new String(passwordField1.getPassword()) + "'";
                         ResultSet resultSet = statement.executeQuery(query);
 
 
