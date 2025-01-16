@@ -1,4 +1,10 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class MenuAdmin {
     public JPanel menuAd;
@@ -14,4 +20,34 @@ public class MenuAdmin {
 
     //ffr
     //Creacion total
+
+
+    public MenuAdmin() {
+        Ingresar_user.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String query = "INSERT INTO jugadores (id, nombre, posicion ,equipo, edad ) VALUES (?, ?, ?, ?, ?)";
+                String correo = new_user.getText().trim();
+                String password = new_pass.getText().trim();
+
+                try(Connection connection = usuarios.ConexionBD.getConnection()){
+                    PreparedStatement cadenaPreparada = connection.prepareStatement(query);
+
+                    cadenaPreparada.setString(1,correo);
+                    cadenaPreparada.setString(2,password);
+                    cadenaPreparada.executeUpdate();
+
+
+
+
+
+
+            } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+            });
+
+    }
 }

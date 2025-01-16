@@ -17,11 +17,7 @@ public class Login {
             public void actionPerformed(ActionEvent e) {
 
 
-                    String url = "jdbc:mysql://ul1p0vkekpygav1f:g4TMqDpYcFoAkQKd4tWx@bjaibh7r281ex1wojndt-mysql.services.clever-cloud.com:3306/bjaibh7r281ex1wojndt";
-                    String usuario = "ul1p0vkekpygav1f";
-                    String password = "g4TMqDpYcFoAkQKd4tWx";
-
-                    try (Connection connection = DriverManager.getConnection(url, usuario, password)) {
+                    try (Connection connection = usuarios.ConexionBD.getConnection()) {
                         Statement statement = connection.createStatement();
                         String query = "SELECT * FROM usuarios WHERE username = '" + textField1.getText() + "' AND password = '" + new String(passwordField1.getPassword()) + "' AND rol = '" + Seleccionador.getSelectedItem().toString() + "'";
                         ResultSet resultSet = statement.executeQuery(query);
@@ -30,12 +26,11 @@ public class Login {
                         if(resultSet.next()) {
                             if (Seleccionador.getSelectedItem().equals(resultSet.getString("rol"))){
                                 if(textField1.getText().equals(resultSet.getString("username")) && new String(passwordField1.getPassword()).equals(resultSet.getString("password"))) {
-
                                     if(resultSet.getString("rol").equals("Administrador")){
                                         System.out.println("Ingresaste a modo administrador ");
                                         JFrame frame = new JFrame();
                                         frame.setTitle("Login");
-                                        frame.setSize(350, 200);
+                                        frame.setSize(350, 300);
                                         frame.setContentPane(new MenuAdmin().menuAd);
                                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                         frame.setVisible(true);
@@ -46,7 +41,7 @@ public class Login {
                                         System.out.println("Ingresaste a modo usuario ");
                                         JFrame frame = new JFrame();
                                         frame.setTitle("Login");
-                                        frame.setSize(350, 200);
+                                        frame.setSize(350, 300);
                                         frame.setContentPane(new usuarios().panel1);
                                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                         frame.setVisible(true);
