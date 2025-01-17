@@ -36,6 +36,7 @@ public class Login {
                                         frame.setVisible(true);
 
                                         ((JFrame) SwingUtilities.getWindowAncestor(logInButton)).dispose();
+                                        new MenuAdmin();
 
                                     }else if(resultSet.getString("rol").equals("Usuario")){
                                         System.out.println("Ingresaste a modo usuario ");
@@ -45,6 +46,7 @@ public class Login {
                                         frame.setContentPane(new usuarios().panel1);
                                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                         frame.setVisible(true);
+                                        new usuarios();
                                     }
 
                                 }

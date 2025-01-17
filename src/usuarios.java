@@ -32,6 +32,11 @@ public class usuarios {
 
         cargarProductos();
         cargarProductosBajoStock();
+        JFrame frame=new JFrame("Menu del usuario");
+        frame.setContentPane( panel1 );
+        frame.setSize( 300,300 );
+        frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        frame.setVisible( true );
     }
 
     private void cargarProductos() {
@@ -88,5 +93,9 @@ public class usuarios {
         public static Connection getConnection() throws SQLException {
             return DriverManager.getConnection(URL, USERNAME, PASSWORD);
         }
+
+    }
+    public static void main(String[] args){
+        new usuarios();
     }
 }
