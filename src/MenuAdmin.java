@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 
 public class MenuAdmin {
-    public JPanel menuAd;
+    JPanel menuAd;
     private JTabbedPane tabbedPane1;
     private JButton Agregar_P;
     private JTextField codigo_p;
@@ -60,5 +60,13 @@ public class MenuAdmin {
                 }
             }
         });
+        JFrame frame=new JFrame("Administrador");
+        frame.setContentPane( menuAd );
+        frame.setSize( 300,300 );
+        frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        frame.setVisible( true );
+    }
+    public static void main(String[] args){
+        new MenuAdmin();
     }
 }
