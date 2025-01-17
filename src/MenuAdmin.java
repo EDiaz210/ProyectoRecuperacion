@@ -27,16 +27,14 @@ public class MenuAdmin {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String query = "INSERT INTO jugadores (id, nombre, posicion ,equipo, edad ) VALUES (?, ?, ?, ?, ?)";
-                String correo = new_user.getText().trim();
-                String password = new_pass.getText().trim();
+                String query = "INSERT INTO productos (id, nombre, descripcion ,precio, stock ) VALUES (?, ?, ?, ?, ?)";
+                String id = codigo_p.getText();
+
 
                 try(Connection connection = usuarios.ConexionBD.getConnection()){
                     PreparedStatement cadenaPreparada = connection.prepareStatement(query);
 
-                    cadenaPreparada.setString(1,correo);
-                    cadenaPreparada.setString(2,password);
-                    cadenaPreparada.executeUpdate();
+
 
 
 
