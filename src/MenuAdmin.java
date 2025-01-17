@@ -175,11 +175,4 @@ public class MenuAdmin {
         });
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Administrador");
-        frame.setContentPane(new MenuAdmin().menuAd);
-        frame.setSize(600, 400);  // Ajusta el tamaño según sea necesario
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
 }
