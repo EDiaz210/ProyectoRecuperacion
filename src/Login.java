@@ -26,7 +26,7 @@ public class Login {
                         if(resultSet.next()) {
                             if (Seleccionador.getSelectedItem().equals(resultSet.getString("rol"))){
                                 if(textField1.getText().equals(resultSet.getString("username")) && new String(passwordField1.getPassword()).equals(resultSet.getString("password"))) {
-                                    if(resultSet.getString("rol").equals("Administrador")){
+                                    if(resultSet.getString("rol").equals("administrador")){
                                         System.out.println("Ingresaste a modo administrador ");
                                         JFrame frame = new JFrame();
                                         frame.setTitle("Login");
@@ -38,7 +38,7 @@ public class Login {
                                         ((JFrame) SwingUtilities.getWindowAncestor(logInButton)).dispose();
                                         new MenuAdmin();
 
-                                    }else if(resultSet.getString("rol").equals("Usuario")){
+                                    }else if(resultSet.getString("rol").equals("usuario")){
                                         System.out.println("Ingresaste a modo usuario ");
                                         JFrame frame = new JFrame();
                                         frame.setTitle("Login");
@@ -55,7 +55,7 @@ public class Login {
                         }
                         }
                     } catch (SQLException ex) {
-                        throw new RuntimeException(ex);
+                        ex.printStackTrace();
 
                 }
             }

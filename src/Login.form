@@ -27,8 +27,8 @@
         </constraints>
         <properties>
           <model>
-            <item value="Administrador"/>
-            <item value="Usuario"/>
+            <item value="administrador"/>
+            <item value="usuario"/>
           </model>
           <toolTipText value="Administrador Usuario "/>
         </properties>
