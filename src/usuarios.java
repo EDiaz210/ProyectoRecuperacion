@@ -86,9 +86,9 @@ public class usuarios {
     }
 
     public static class ConexionBD {
-        private static final String URL = "jdbc:mysql://ul1p0vkekpygav1f:g4TMqDpYcFoAkQKd4tWx@bjaibh7r281ex1wojndt-mysql.services.clever-cloud.com:3306/bjaibh7r281ex1wojndt";
+        private static final String URL = "jdbc:mysql://ul1p0vkekpygav1f:0WyVSEzfGivY3KQ0xIkw@bjaibh7r281ex1wojndt-mysql.services.clever-cloud.com:3306/bjaibh7r281ex1wojndt";
         private static final String USERNAME = "ul1p0vkekpygav1f";
-        private static final String PASSWORD = "g4TMqDpYcFoAkQKd4tWx";
+        private static final String PASSWORD = "0WyVSEzfGivY3KQ0xIkw";
 
         public static Connection getConnection() throws SQLException {
             return DriverManager.getConnection(URL, USERNAME, PASSWORD);
